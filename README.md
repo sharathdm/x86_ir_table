@@ -2,8 +2,6 @@
 
 module to print the x86 Interrupt Remapping Table
 
-
-
 root@root# insmod irtable.ko
 root@root# dmesg
 [ 6137.634324] index = 0
