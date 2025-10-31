@@ -35,7 +35,6 @@ static int __init hello_mod_init(void)
         printk("addr %lx\n", irte_addr);
         temp = (struct irte *)phys_to_virt(irte_addr);
         for(i=0;i<64;i++) {
-                        printk("index = %d \n",i);
             printk("present %x, vector %x, dest mode %x, dest id %x, sid(BDF) %x",temp->present,temp->vector,temp->dst_mode,temp->dest_id,temp->sid);
             temp++;
         }
