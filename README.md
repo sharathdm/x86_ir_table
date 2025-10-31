@@ -2,7 +2,15 @@
 
 module to print the x86 Interrupt Remapping Table
 
-root@root# insmod irtable.ko
+dmesg | grep DMAR
+
+[    0.056820] DMAR: DRHD base: 0x000000aa3fc000 flags: 0x0
+[    0.056825] DMAR: dmar0: reg_base_addr aa3fc000 ver 6:0 cap 9ed008c40780466 ecap 3ee9e86f050df
+
+convert 0xaa3c000 to decimal ans pass as argument to insmod
+
+
+root@root# insmod irtable.ko dmar_reg_base=2856304640
 
 root@root# dmesg
 
